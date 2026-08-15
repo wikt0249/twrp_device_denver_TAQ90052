@@ -1,0 +1,7 @@
+on boot
+    exec /sbin/insmod /rk30xxnand_ko.ko
+    exec /sbin/insmod /rk29-ipp.ko
+
+on post-fs
+    mount ext4 mtd@cache /cache wait noatime nodiratime nosuid nodev noauto_da_alloc discard
+
